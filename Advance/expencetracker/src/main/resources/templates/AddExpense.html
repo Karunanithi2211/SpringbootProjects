@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddExpense</title>
+</head>
+<body>
+    <h1>Add Expense</h1>
+    <form action="/expense" method="post">
+        <input type="hidden" name="id" th:value="${expense.id}">
+        <input type="text" name="expensename" placeholder="Enter expense name" th:value="${expense.expensename}">
+        <input type="text" name="amount" placeholder="Enter amount" th:value="${expense.amount}">
+        <textarea name="note" placeholder="Enter note(Optional)" th:text="${expense.note}"></textarea>></textarea>
+        <button type="submit">Add Expense</button>
+    </form>
+    <a th:href="'/delete/'+${expense.id}">Delete</a>
+</body>
+</html>

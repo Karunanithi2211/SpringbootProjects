@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense-Tracker</title>
+</head>
+<body>
+    <h1>Expense-Tracker</h1>
+    <nav>
+        <ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+            
+    </nav>
+    <div>
+        <a href="/addexpense">AddExpense</a>
+    </div>
+    <div th:each="expense : ${expenses}">
+        <h3 th:text="${expense.expensename}"></h3>
+        <p>₹<span th:text="${expense.amount}"></span></p>
+        <a th:href="'/edit/'+${expense.id}">Edit</a>
+    </div>
+</body>
+</html>
